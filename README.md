@@ -6,14 +6,14 @@ A mini workflow designer for HR admins to model and test processes like onboardi
 
 - Next.js (App Router, TypeScript)
 - React Flow for visual workflow building
-- Tailwind CSS for lightweight UI styling
+- Tailwind CSS for UI
 - Mock API route for automated action definitions
 
 ## Features Implemented
 
 ### Workflow Canvas
 
-- Drag-and-drop node creation from a node library sidebar
+- Node creation from a node library sidebar
 - Click-to-add node support
 - Edge connections between steps
 - Node and edge deletion via Backspace/Delete
@@ -64,7 +64,7 @@ Selecting a node opens a right-side form panel with type-specific fields:
 - `src/app/page.tsx` - app entry, mounts workflow designer
 - `src/components/workflow/workflow-designer.tsx` - main state orchestration and canvas
 - `src/components/workflow/custom-nodes.tsx` - React Flow custom node rendering
-- `src/components/workflow/node-palette.tsx` - draggable node library
+- `src/components/workflow/node-palette.tsx` - node library
 - `src/components/workflow/node-inspector.tsx` - node configuration forms
 - `src/components/workflow/sandbox-panel.tsx` - test/simulation panel
 - `src/lib/workflow.ts` - helper logic (default config, validation, serialization)
@@ -75,7 +75,7 @@ Selecting a node opens a right-side form panel with type-specific fields:
 - `src/app/api/automations/route.ts` - automations API
 - `src/app/api/simulate/route.ts` - simulation API
 
-## Assumptions and Tradeoffs
+## Assumptions
 
 - No backend persistence (in-memory only)
 - No authentication
@@ -83,7 +83,12 @@ Selecting a node opens a right-side form panel with type-specific fields:
 - Simulation runs as deterministic graph traversal (not full BPM engine semantics)
 - UI is optimized for clarity and functionality over pixel-perfect design
 
-## Run Locally
+## What I would Add with More Time
+- Drag and drop nodes
+- Undo/Redo options
+- Highlighting of active nodes in a path as each step executes
+
+## How to Run
 
 ```bash
 npm install
